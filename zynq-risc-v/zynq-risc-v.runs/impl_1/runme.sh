@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.runs/impl_1'
+HD_PWD='C:/Users/taylo/OneDrive - UCB-O365/Desktop/College/2023-2024/Spring2024/ECEN4693/Project/zynq-risc-v/zynq-risc-v/zynq-risc-v.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

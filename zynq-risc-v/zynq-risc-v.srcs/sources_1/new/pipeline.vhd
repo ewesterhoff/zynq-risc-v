@@ -68,7 +68,7 @@ begin
                     -- Update pipeline register
                     if count(24) = '1' then
                         pipeline_register <= ID;
-                        led0 <= '1';
+                        led0 <= '0';
                         led1 <= '0';
                         led2 <= '0';
                         led3 <= '0';
@@ -79,8 +79,8 @@ begin
                     -- Update pipeline register
                     if count(24) = '1' then
                         pipeline_register <= EX;
-                        led0 <= '0';
-                        led1 <= '1';
+                        led0 <= '1';
+                        led1 <= '0';
                         led2 <= '0';
                         led3 <= '0';
                         count <= (others => '0');
@@ -91,8 +91,8 @@ begin
                     if count(24) = '1' then
                         pipeline_register <= MEM;
                         led0 <= '0';
-                        led1 <= '0';
-                        led2 <= '1';
+                        led1 <= '1';
+                        led2 <= '0';
                         led3 <= '0';
                         count <= (others => '0');
                     end if;
@@ -101,10 +101,10 @@ begin
                     -- Update pipeline register
                     if count(24) = '1' then
                         pipeline_register <= WB;
-                        led0 <= '0';
-                        led1 <= '0';
+                        led0 <= '1';
+                        led1 <= '1';
                         led2 <= '0';
-                        led3 <= '1';
+                        led3 <= '0';
                         count <= (others => '0');
                     end if;
                 when WB =>
@@ -114,7 +114,7 @@ begin
                         pipeline_register <= F;
                         led0 <= '0';
                         led1 <= '0';
-                        led2 <= '0';
+                        led2 <= '1';
                         led3 <= '0';
                         count <= (others => '0');
                     end if;

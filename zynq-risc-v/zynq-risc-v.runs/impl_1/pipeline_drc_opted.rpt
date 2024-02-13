@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Tue Feb 13 15:26:30 2024
-| Host         : EWESTERHOFF running 64-bit major release  (build 9200)
+| Date         : Tue Feb 13 15:39:27 2024
+| Host         : DESKTOP-4REJTS7 running 64-bit major release  (build 9200)
 | Command      : report_drc -file pipeline_drc_opted.rpt -pb pipeline_drc_opted.pb -rpx pipeline_drc_opted.rpx
 | Design       : pipeline
 | Device       : xc7z010clg400-1
