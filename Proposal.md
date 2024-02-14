@@ -37,7 +37,7 @@ The work outlined above is will be the minimum viable product. However, we have 
 - Implementing a simple branch predictor
 - Running a well-established benchmark suite
 - Implementing more complex peripherals like HDMI OUT or Ethernet communication.
-- TBD depending on interest of future class topics
+- Implementing a memory controller / cache hierarchy
 
 ## Resources
 - [RISC V Instruction Set Manual](https://riscv.org/wp-content/uploads/2016/06/riscv-spec-v2.1.pdf)
