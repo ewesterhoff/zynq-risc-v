@@ -1,0 +1,10 @@
+{
+  "generated-ia-sdk": [
+    "/home/project/riscv32i_cycle_accurate",
+    "riscv32i_cycle_accurate"
+  ],
+  "generated-ca-sdk": [
+    "/home/project/riscv32i_cycle_accurate",
+    "riscv32i_cycle_accurate"
+  ]
+}
