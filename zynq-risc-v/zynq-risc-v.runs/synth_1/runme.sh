@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/taylo/OneDrive - UCB-O365/Desktop/College/2023-2024/Spring2024/ECEN4693/Project/zynq-risc-v/zynq-risc-v/zynq-risc-v.runs/synth_1'
+HD_PWD='C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log pipeline.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source pipeline.tcl
+EAStep vivado -log ecen5593_startercode_ca_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ecen5593_startercode_ca_top.tcl
