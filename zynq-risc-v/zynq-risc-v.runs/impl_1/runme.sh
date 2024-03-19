@@ -42,7 +42,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
-EAStep vivado -log ecen5593_startercode_ca_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source ecen5593_startercode_ca_top.tcl -notrace
+/bin/touch .write_bitstream.begin.rst
+EAStep vivado -log Zybo_Z7_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source Zybo_Z7_top.tcl -notrace
 
 

@@ -38,3 +38,38 @@
     <Process Command="vivado.bat" Owner="etwes" Host="EWESTERHOFF" Pid="25220" HostCore="20" HostMemory="016834945024">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="etwes" Host="EWESTERHOFF" Pid="59024" HostCore="20" HostMemory="016834945024">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="etwes" Host="EWESTERHOFF" Pid="59036" HostCore="20" HostMemory="016834945024">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="etwes" Host="EWESTERHOFF" Pid="45248" HostCore="20" HostMemory="016834945024">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="etwes" Host="EWESTERHOFF" Pid="67528" HostCore="20" HostMemory="016834945024">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="etwes" Host="EWESTERHOFF" Pid="49604" HostCore="20" HostMemory="016834945024">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="etwes" Host="EWESTERHOFF" Pid="26512" HostCore="20" HostMemory="016834945024">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="etwes" Host="EWESTERHOFF" Pid="16444" HostCore="20" HostMemory="016834945024">
+    </Process>
+</ProcessHandle>

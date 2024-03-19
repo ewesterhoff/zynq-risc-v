@@ -24,9 +24,9 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 // pre-commands:
-ISETouchFile( "init_design", "begin" );
+ISETouchFile( "write_bitstream", "begin" );
 ISEStep( "vivado",
-         "-log ecen5593_startercode_ca_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source ecen5593_startercode_ca_top.tcl -notrace" );
+         "-log Zybo_Z7_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source Zybo_Z7_top.tcl -notrace" );
 
 
 

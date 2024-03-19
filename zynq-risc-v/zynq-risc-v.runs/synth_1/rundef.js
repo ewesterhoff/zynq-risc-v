@@ -24,7 +24,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log ecen5593_startercode_ca_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ecen5593_startercode_ca_top.tcl" );
+         "-log Zybo_Z7_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Zybo_Z7_top.tcl" );
 
 
 
