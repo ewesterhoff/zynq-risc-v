@@ -9,16 +9,20 @@ module Zybo_Z7_top_tb;
     reg btn,
     wire [3:0] led,
 
-    wire [7:0] ja, 
+    wire [7:0] ja,  // not sure if these are even really needed?
     wire [7:0] jc,  
     wire [7:0] jd,
     wire [7:0] je,
 
     wire [31:0] addr;
-    assign addr = (ja << 24) | (jc << 16) | (jd << 8) | (je);
+    wire [31:0] data;
+    assign ja = addr[31:24];
+    assign jc = addr[23:16];
+    assign jd = addr[15:8];
+    assign je = addr[7:0];
 
-    // Instantiate Unit Under Test (UUT)
-    Zybo_Z7_top uut (
+    // Instantiate Device Under Test (DUT)
+    Zybo_Z7_top dut (
         .sysclk(sysclk),
         .btn(btn),
         .led(led),
@@ -28,15 +32,21 @@ module Zybo_Z7_top_tb;
         .je(je)
     );
 
+    Inst_Mem_test dut (
+        .PC(addr),
+        .reset(btn)
+        .Instruction_Code(data)
+    );
+
     // Setting up waveform
     initial
     begin
         $dumpfile("top_output_wave.vcd");
-        $dumpvars(0,stimulus);
+        $dumpvars(0,Zybo_Z7_top_tb);
     end
 
     initial
-    $monitor($time, PC = %h", addr);
+    $monitor($time, PC = %h, Instruction = %h", addr, data);
 
     // Clock Generation
     initial begin
@@ -52,6 +62,11 @@ module Zybo_Z7_top_tb;
         btn = 0;
 
         // grab instructions here
+        #20 addr = 32'd0;
+        #20 addr = 32'd4;
+        #20 addr = 32'd8;
+        #20 addr = 32'd12;
+
 
         // Simulation done
         #100
