@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1709673804" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ecen5593_startercode_ca_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1710883936" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ecen5593_startercode_ca_top.dcp">
   <File Type="PA-TCL" Name="Zybo_Z7_top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="Zybo_Z7_top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Zybo_Z7_top_reports.tcl"/>
@@ -245,8 +245,160 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/third-party/ahb3lite_pkg/rtl/verilog/ahb3lite_pkg.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/ahb3lite_pkg/rtl/verilog/ahb3lite_pkg.sv"/>
+        <Attr Name="ImportTime" Val="1710880491"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/third-party/ahb3lite_memory/rtl/verilog/ahb3lite_sram1rw.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/ahb3lite_memory/rtl/verilog/ahb3lite_sram1rw.sv"/>
+        <Attr Name="ImportTime" Val="1710880514"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/third-party/memory/rtl/verilog/rl_ram_1r1w.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/memory/rtl/verilog/rl_ram_1r1w.sv"/>
+        <Attr Name="ImportTime" Val="1710881483"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/third-party/memory/rtl/verilog/rl_ram_1r1w_altera.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/memory/rtl/verilog/rl_ram_1r1w_altera.sv"/>
+        <Attr Name="ImportTime" Val="1710881483"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/third-party/memory/rtl/verilog/rl_ram_1r1w_easic_n3x.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/memory/rtl/verilog/rl_ram_1r1w_easic_n3x.sv"/>
+        <Attr Name="ImportTime" Val="1710881483"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/third-party/memory/rtl/verilog/rl_ram_1r1w_easic_n3xs.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/memory/rtl/verilog/rl_ram_1r1w_easic_n3xs.sv"/>
+        <Attr Name="ImportTime" Val="1710881483"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/third-party/memory/rtl/verilog/rl_ram_1r1w_generic.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/memory/rtl/verilog/rl_ram_1r1w_generic.sv"/>
+        <Attr Name="ImportTime" Val="1710881483"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/third-party/memory/rtl/verilog/rl_ram_1r1w_lattice.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/memory/rtl/verilog/rl_ram_1r1w_lattice.sv"/>
+        <Attr Name="ImportTime" Val="1710881483"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/Zybo_Z7_top.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/verilog/ahb3lite_bfm.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/ahb3lite_pkg/rtl/verilog/ahb3lite_bfm.sv"/>
+        <Attr Name="ImportTime" Val="1710880491"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/verilog/apb4_bfm.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/ahb3lite_pkg/rtl/verilog/apb4_bfm.sv"/>
+        <Attr Name="ImportTime" Val="1710880491"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/third-party/ahb3lite_pkg/rtl/verilog/ahb3lite_bfm.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/ahb3lite_pkg/rtl/verilog/ahb3lite_bfm.sv"/>
+        <Attr Name="ImportTime" Val="1710880491"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/third-party/ahb3lite_pkg/rtl/verilog/apb4_bfm.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/ahb3lite_pkg/rtl/verilog/apb4_bfm.sv"/>
+        <Attr Name="ImportTime" Val="1710880491"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/third-party/memory/rtl/verilog/rl_queue.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/memory/rtl/verilog/rl_queue.sv"/>
+        <Attr Name="ImportTime" Val="1710881483"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/third-party/memory/rtl/verilog/rl_scfifo.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/memory/rtl/verilog/rl_scfifo.sv"/>
+        <Attr Name="ImportTime" Val="1710881483"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/third-party/memory/rtl/verilog/rl_ram_1rw_generic.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/memory/rtl/verilog/rl_ram_1rw_generic.sv"/>
+        <Attr Name="ImportTime" Val="1710881483"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/third-party/memory/rtl/verilog/rl_ram_1rw_easic_n3x.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/memory/rtl/verilog/rl_ram_1rw_easic_n3x.sv"/>
+        <Attr Name="ImportTime" Val="1710881483"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -286,9 +438,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

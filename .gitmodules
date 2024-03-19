@@ -1,0 +1,9 @@
+[submodule "third-party/ahb3lite_pkg"]
+	path = third-party/ahb3lite_pkg
+	url = git@github.com:RoaLogic/ahb3lite_pkg.git
+[submodule "third-party/ahb3lite_memory"]
+	path = third-party/ahb3lite_memory
+	url = git@github.com:RoaLogic/ahb3lite_memory.git
+[submodule "third-party/memory"]
+	path = third-party/memory
+	url = git@github.com:RoaLogic/memory.git

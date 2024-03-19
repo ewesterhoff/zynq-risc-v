@@ -72,7 +72,7 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 5
-set_param synth.incrementalSynthesisCache C:/Users/etwes/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-61648-EWESTERHOFF/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/etwes/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-29824-EWESTERHOFF/incrSyn
 set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
@@ -91,6 +91,16 @@ set_property ip_output_repo c:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
+read_verilog -library xil_defaultlib -sv {
+  C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/third-party/ahb3lite_pkg/rtl/verilog/ahb3lite_pkg.sv
+  C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/third-party/ahb3lite_memory/rtl/verilog/ahb3lite_sram1rw.sv
+  C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/third-party/memory/rtl/verilog/rl_ram_1r1w.sv
+  C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/third-party/memory/rtl/verilog/rl_ram_1r1w_altera.sv
+  C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/third-party/memory/rtl/verilog/rl_ram_1r1w_easic_n3x.sv
+  C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/third-party/memory/rtl/verilog/rl_ram_1r1w_easic_n3xs.sv
+  C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/third-party/memory/rtl/verilog/rl_ram_1r1w_generic.sv
+  C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/third-party/memory/rtl/verilog/rl_ram_1r1w_lattice.sv
+}
 read_verilog -library xil_defaultlib {
   C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/common/d_ff_rst_t.v
   C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/common/d_ff_rst_we_stall_clr_t.v
