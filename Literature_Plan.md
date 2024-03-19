@@ -1,3 +1,5 @@
+Will need to keep track of resources used for implementation... Need to have this for part of the final report
+
 # Final Project Implementation Plan - a RISC-V Processor for ZYNQ
 #### Taylore Todd & Emma Westerhoff
 
