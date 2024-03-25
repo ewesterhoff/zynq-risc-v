@@ -1,6 +1,6 @@
-`include "../zynq-risc-v/zynq-risc-v.srcs/sources_1/new/Zybo_Z7_top.v"
+`include "../../../sources_1/new/Zybo_Z7_top.v"
 
-`timescale 1 ns / 1 ns  // time-unit = 1 ns, precision = 1 ns
+`timescale 100 ns / 1 ns  // time-unit = 1 ns, precision = 1 ns
 
 module zybo_z7_tb ();
     //----------------------------------------------------------------
@@ -35,7 +35,7 @@ module zybo_z7_tb ();
 
     Zybo_Z7_top dut(
         .sysclk(clk),
-        .btn(reset),
+        .btn(reset)
     );
 
     //----------------------------------------------------------------
