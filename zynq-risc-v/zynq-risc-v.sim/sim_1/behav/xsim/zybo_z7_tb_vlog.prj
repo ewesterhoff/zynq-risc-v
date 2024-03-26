@@ -38,6 +38,19 @@ sv xil_defaultlib  \
 "../../../../zynq-risc-v.srcs/sources_1/imports/third-party/memory/rtl/verilog/rl_ram_1r1w_lattice.sv" \
 
 verilog xil_defaultlib  \
+"../../../../zynq-risc-v.srcs/sources_1/new/Zybo_Z7_top.v" \
+
+sv xil_defaultlib  \
+"../../../../zynq-risc-v.srcs/sources_1/imports/verilog/ahb3lite_bfm.sv" \
+"../../../../zynq-risc-v.srcs/sources_1/imports/verilog/apb4_bfm.sv" \
+"../../../../zynq-risc-v.srcs/sources_1/imports/third-party/ahb3lite_pkg/rtl/verilog/ahb3lite_bfm.sv" \
+"../../../../zynq-risc-v.srcs/sources_1/imports/third-party/ahb3lite_pkg/rtl/verilog/apb4_bfm.sv" \
+"../../../../zynq-risc-v.srcs/sources_1/imports/third-party/memory/rtl/verilog/rl_queue.sv" \
+"../../../../zynq-risc-v.srcs/sources_1/imports/third-party/memory/rtl/verilog/rl_scfifo.sv" \
+"../../../../zynq-risc-v.srcs/sources_1/imports/third-party/memory/rtl/verilog/rl_ram_1rw_generic.sv" \
+"../../../../zynq-risc-v.srcs/sources_1/imports/third-party/memory/rtl/verilog/rl_ram_1rw_easic_n3x.sv" \
+
+verilog xil_defaultlib  \
 "../../../../zynq-risc-v.srcs/sim_1/imports/test/inst_mem_tb.v" \
 
 # compile glbl module

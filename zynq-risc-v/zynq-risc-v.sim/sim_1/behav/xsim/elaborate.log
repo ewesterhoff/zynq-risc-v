@@ -51,7 +51,7 @@ Compiling module xil_defaultlib.ecen5593_startercode_ca_core_t
 Compiling module xil_defaultlib.ecen5593_startercode_ca
 Compiling module xil_defaultlib.ecen5593_startercode_ca_top
 Compiling module xil_defaultlib.rl_ram_1r1w_generic(WRITE_ABITS=...
-Compiling module xil_defaultlib.rl_ram_1r1w_default
+Compiling module xil_defaultlib.rl_ram_1r1w(ABITS=12)
 Compiling module xil_defaultlib.ahb3lite_sram1rw_default
 Compiling module xil_defaultlib.Zybo_Z7_top
 Compiling module xil_defaultlib.zybo_z7_tb

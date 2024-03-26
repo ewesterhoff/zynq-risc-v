@@ -72,8 +72,8 @@
 module ahb3lite_sram1rw
 import ahb3lite_pkg::*;
 #(
-  parameter MEM_SIZE          = 4000,   //Memory in Bytes
-  parameter MEM_DEPTH         = 256, //Memory depth
+  parameter MEM_SIZE          = 16384,   //Memory in Bytes
+  parameter MEM_DEPTH         = 512, //Memory depth
   parameter HADDR_SIZE        = 32,
   parameter HDATA_SIZE        = 32,
   parameter TECHNOLOGY        = "GENERIC",
