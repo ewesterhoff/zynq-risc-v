@@ -2,6 +2,7 @@
 2020.2
 Oct 13 2023
 20:47:58
+C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.ip_user_files/bd/design_1/sim/design_1.vhd,1711729125,vhdl,,,,,,,,,,,,
 C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.sim/sim_1/behav/xsim/glbl.v,1697210495,verilog,,,,glbl,,uvm,,,,,,
 C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sim_1/imports/test/inst_mem_tb.v,1711487126,verilog,,,C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/new/Zybo_Z7_top.v,zybo_z7_tb,,uvm,,,,,,
 C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/common/d_ff_rst_t.v,1709069924,verilog,,C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/common/d_ff_rst_we_stall_clr_t.v,,d_ff_rst_t,,uvm,,,,,,
@@ -46,4 +47,4 @@ C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-
 C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/verilog/ecen5593_startercode_ca_if_code_t.v,1709161041,verilog,,C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/verilog/ecen5593_startercode_ca_ldst_t.v,,ecen5593_startercode_ca_if_code_t,,uvm,,,,,,
 C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/verilog/ecen5593_startercode_ca_ldst_t.v,1709069924,verilog,,C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/verilog/ecen5593_startercode_ca_top.v,,ecen5593_startercode_ca_ldst_t,,uvm,,,,,,
 C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/verilog/ecen5593_startercode_ca_top.v,1709161049,verilog,,,,ecen5593_startercode_ca_top,,uvm,,,,,,
-C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/new/Zybo_Z7_top.v,1711487617,verilog,,,,Zybo_Z7_top,,uvm,,,,,,
+C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/new/Zybo_Z7_top.v,1711731684,verilog,,,,Zybo_Z7_top,,uvm,,,,,,

@@ -12,15 +12,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1,999.655 ns"></ZoomStartTime>
-      <ZoomEndTime time="3,184.101 ns"></ZoomEndTime>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,273.632 ns"></ZoomEndTime>
       <Cursor1Time time="3,100.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="208"></NameColumnWidth>
-      <ValueColumnWidth column_width="277"></ValueColumnWidth>
+      <ValueColumnWidth column_width="269"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="18" />
+   <WVObjectSize size="21" />
    <wvobject fp_name="/zybo_z7_tb/dut/sysclk" type="logic">
       <obj_property name="ElementShortName">sysclk</obj_property>
       <obj_property name="ObjectShortName">sysclk</obj_property>
@@ -28,14 +28,6 @@
    <wvobject fp_name="/zybo_z7_tb/dut/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/instr_index" type="array">
-      <obj_property name="ElementShortName">instr_index[3:0]</obj_property>
-      <obj_property name="ObjectShortName">instr_index[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/pc" type="array">
-      <obj_property name="ElementShortName">pc[31:0]</obj_property>
-      <obj_property name="ObjectShortName">pc[31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/zybo_z7_tb/dut/state" type="logic">
       <obj_property name="ElementShortName">state</obj_property>
@@ -45,6 +37,10 @@
       <obj_property name="ElementShortName">inst_rdata[31:0]</obj_property>
       <obj_property name="ObjectShortName">inst_rdata[31:0]</obj_property>
    </wvobject>
+   <wvobject fp_name="/zybo_z7_tb/dut/inst_write" type="array">
+      <obj_property name="ElementShortName">inst_write[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_write[31:0]</obj_property>
+   </wvobject>
    <wvobject fp_name="/zybo_z7_tb/dut/inst_addr_out" type="array">
       <obj_property name="ElementShortName">inst_addr_out[31:0]</obj_property>
       <obj_property name="ObjectShortName">inst_addr_out[31:0]</obj_property>
@@ -53,44 +49,60 @@
       <obj_property name="ElementShortName">inst_addr_in[31:0]</obj_property>
       <obj_property name="ObjectShortName">inst_addr_in[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/id/s_id_rs1_Q" type="array">
-      <obj_property name="ElementShortName">s_id_rs1_Q[4:0]</obj_property>
-      <obj_property name="ObjectShortName">s_id_rs1_Q[4:0]</obj_property>
+   <wvobject fp_name="/zybo_z7_tb/dut/mem_read_data" type="array">
+      <obj_property name="ElementShortName">mem_read_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_read_data[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/id/s_id_rs2_Q" type="array">
-      <obj_property name="ElementShortName">s_id_rs2_Q[4:0]</obj_property>
-      <obj_property name="ObjectShortName">s_id_rs2_Q[4:0]</obj_property>
+   <wvobject fp_name="/zybo_z7_tb/dut/mem_write_data" type="array">
+      <obj_property name="ElementShortName">mem_write_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_write_data[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/id/s_id_rd_D" type="array">
-      <obj_property name="ElementShortName">s_id_rd_D[4:0]</obj_property>
-      <obj_property name="ObjectShortName">s_id_rd_D[4:0]</obj_property>
+   <wvobject fp_name="/zybo_z7_tb/dut/mem_addr" type="array">
+      <obj_property name="ElementShortName">mem_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_addr[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/id/s_id_rf1_D" type="array">
-      <obj_property name="ElementShortName">s_id_rf1_D[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s_id_rf1_D[31:0]</obj_property>
+   <wvobject fp_name="/zybo_z7_tb/dut/mem_write_sel" type="logic">
+      <obj_property name="ElementShortName">mem_write_sel</obj_property>
+      <obj_property name="ObjectShortName">mem_write_sel</obj_property>
    </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/id/s_id_rf2_D" type="array">
-      <obj_property name="ElementShortName">s_id_rf2_D[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s_id_rf2_D[31:0]</obj_property>
+   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/s_id_opc" type="array">
+      <obj_property name="ElementShortName">s_id_opc[16:0]</obj_property>
+      <obj_property name="ObjectShortName">s_id_opc[16:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/id/s_id_immedi_D" type="array">
-      <obj_property name="ElementShortName">s_id_immedi_D[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s_id_immedi_D[31:0]</obj_property>
+   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/s_id_rs1" type="array">
+      <obj_property name="ElementShortName">s_id_rs1[4:0]</obj_property>
+      <obj_property name="ObjectShortName">s_id_rs1[4:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/ex/r_ex_aluop_Q" type="array">
-      <obj_property name="ElementShortName">r_ex_aluop_Q[3:0]</obj_property>
-      <obj_property name="ObjectShortName">r_ex_aluop_Q[3:0]</obj_property>
+   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/s_id_rs2" type="array">
+      <obj_property name="ElementShortName">s_id_rs2[4:0]</obj_property>
+      <obj_property name="ObjectShortName">s_id_rs2[4:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/ex/s_ex_src1_Q" type="array">
-      <obj_property name="ElementShortName">s_ex_src1_Q[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s_ex_src1_Q[31:0]</obj_property>
+   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/s_id_rd" type="array">
+      <obj_property name="ElementShortName">s_id_rd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">s_id_rd[4:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/ex/s_ex_src2_Q" type="array">
-      <obj_property name="ElementShortName">s_ex_src2_Q[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s_ex_src2_Q[31:0]</obj_property>
+   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/s_ex_src1" type="array">
+      <obj_property name="ElementShortName">s_ex_src1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_ex_src1[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/ex/s_ex_alu_D" type="array">
-      <obj_property name="ElementShortName">s_ex_alu_D[31:0]</obj_property>
-      <obj_property name="ObjectShortName">s_ex_alu_D[31:0]</obj_property>
+   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/s_ex_src2" type="array">
+      <obj_property name="ElementShortName">s_ex_src2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_ex_src2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/s_ex_alu" type="array">
+      <obj_property name="ElementShortName">s_ex_alu[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_ex_alu[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/s_me_decoded_data" type="array">
+      <obj_property name="ElementShortName">s_me_decoded_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_me_decoded_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/s_me_mem_result" type="array">
+      <obj_property name="ElementShortName">s_me_mem_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_me_mem_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/s_me_pcsrc" type="logic">
+      <obj_property name="ElementShortName">s_me_pcsrc</obj_property>
+      <obj_property name="ObjectShortName">s_me_pcsrc</obj_property>
    </wvobject>
 </wave_config>

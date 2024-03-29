@@ -39,11 +39,16 @@ module Zybo_Z7_top(
     reg reg_inst_write_sel;
     reg [1:0] inst_trans;
     
-    // Outputs
+    // Instruction Memory Wires
     wire [31:0] inst_rdata;
     wire inst_ready;
     wire inst_resp;
-    
+    wire [2:0] inst_burst;
+    wire [3:0] inst_prot;
+    wire [2:0] inst_size;
+    wire [31:0] inst_write; 
+    wire inst_mast_lock;
+
     wire [31:0] inst_addr_out;
     wire [31:0] inst_addr_in;
     
@@ -53,16 +58,23 @@ module Zybo_Z7_top(
     wire [1:0] inst_trans_in;
     wire [1:0] inst_trans_out;
     
-    wire [2:0] inst_burst;
-    wire [3:0] inst_prot;
-    wire [2:0] inst_size;
+    // Main Memory Wires
+    wire [31:0] mem_read_data;
+    wire [31:0] mem_write_data; 
+    wire [31:0] mem_addr;
     
-    wire [31:0] inst_write; 
-    wire inst_mast_lock; 
+    wire mem_ready;
+    wire mem_resp;
+    wire [2:0] mem_burst;
+    wire [3:0] mem_prot;
+    wire [2:0] mem_size;
+    wire mem_mast_lock;    
+    wire mem_write_sel;    
+    wire [1:0] mem_trans;
     
     // LED assignment
     assign led[0] = (state == 2'b0);
-    assign inst_addr_in = pc;
+    //assign inst_addr_in = pc;
     assign inst_write = current_instr;
     assign inst_write_sel_in = reg_inst_write_sel;
     assign inst_trans_in = inst_trans;
@@ -73,9 +85,9 @@ module Zybo_Z7_top(
     .if_code_HRDATA(inst_rdata),
     .if_code_HREADY(inst_ready),
     .if_code_HRESP(inst_resp),
-    .ldst_HRDATA( ),
-    .ldst_HREADY( ),
-    .ldst_HRESP( ),
+    .ldst_HRDATA(mem_read_data),
+    .ldst_HREADY(mem_ready),
+    .ldst_HRESP(mem_resp),
     .if_code_HADDR(inst_addr_out),
     .if_code_HBURST(inst_burst),
     .if_code_HMASTLOCK(inst_mast_lock),
@@ -83,14 +95,14 @@ module Zybo_Z7_top(
     .if_code_HSIZE(inst_size),
     .if_code_HTRANS(inst_trans_out),
     .if_code_HWRITE(inst_write_sel_out),
-    .ldst_HADDR( ),
-    .ldst_HBURST( ),
-    .ldst_HMASTLOCK( ),
-    .ldst_HPROT( ),
-    .ldst_HSIZE( ),
-    .ldst_HTRANS( ),
-    .ldst_HWDATA( ),
-    .ldst_HWRITE( )
+    .ldst_HADDR(mem_addr),
+    .ldst_HBURST(mem_burst),
+    .ldst_HMASTLOCK(mem_mast_lock),
+    .ldst_HPROT(mem_prot),
+    .ldst_HSIZE(mem_size),
+    .ldst_HTRANS(mem_trans),
+    .ldst_HWDATA(mem_write_data),
+    .ldst_HWRITE(mem_write_sel)
     );
     
     ahb3lite_sram1rw inst_mem (
@@ -109,6 +121,23 @@ module Zybo_Z7_top(
     .HREADY(inst_ready),
     .HRESP(inst_resp)
     );
+    
+    ahb3lite_sram1rw main_mem (
+    .HRESETn(reset),
+    .HCLK(sysclk),
+    .HSEL(1'b1),
+    .HADDR(mem_addr),
+    .HWDATA(mem_write_data),
+    .HRDATA(mem_read_data),
+    .HWRITE(mem_write_sel),
+    .HSIZE(mem_size),
+    .HBURST(mem_burst),
+    .HPROT(mem_prot),
+    .HTRANS(mem_trans),
+    .HREADYOUT(mem_ready),
+    .HREADY(mem_ready),
+    .HRESP(mem_resp)
+    );
 
     // Load instructions from file
     initial begin
@@ -117,8 +146,10 @@ module Zybo_Z7_top(
         inst_trans = 2'b10;
         reg_inst_write_sel = 1;
         instr_index = 0;
-        pc = 4092;
+        pc = 4096;
     end
+    
+    assign inst_addr_in = (state == 2'b01) ? inst_addr_out : pc;
 
     // State machine
     always @ (posedge sysclk)
@@ -138,7 +169,6 @@ module Zybo_Z7_top(
                         // All instructions loaded, switch to RUN_STATE
                         state <= 2'b1;
                         reg_inst_write_sel <= 0;
-                        pc <= inst_addr_out;
                         current_instr <= 0;
                     end
                 end

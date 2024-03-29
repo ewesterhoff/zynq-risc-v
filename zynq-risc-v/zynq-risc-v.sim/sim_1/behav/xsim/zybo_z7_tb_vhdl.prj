@@ -1,0 +1,6 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../zynq-risc-v.ip_user_files/bd/design_1/sim/design_1.vhd" \
+
+# Do not sort compile order
+nosort
