@@ -29,7 +29,7 @@ module Zybo_Z7_top
 )
 (
     input wire sysclk,  // 125 MHz
-    input wire n_rst,
+    input wire r_btn,
     input wire [2:0] btn,
     input wire [3:0] sw,
     
@@ -172,7 +172,7 @@ module Zybo_Z7_top
         reg_inst_write_sel = 1;
         instr_index = 0;
         pc = 4096;
-        rst = n_rst;
+        rst = 1;
         rst_counter = 0;
     end
     
@@ -181,65 +181,71 @@ module Zybo_Z7_top
     // State machine
     always @ (posedge sysclk)
     begin
-        case (state)
-            // POWER UP
-            0:
-                begin
-                    if (rst_counter < 2) begin
-                        rst <= 1;
-                        rst_counter = rst_counter + 1;
-                    end else begin
-                        state <= 2'b1;
+        if (r_btn == 0) begin
+            state <= 0;
+        end else begin    
+            case (state)
+                // INSTRUCTION COPY
+                0:
+                    begin
+                        rst_counter = 0;
+                        rst <= r_btn;
+                        reg_inst_write_sel <= 1;
+                        inst_trans = 2'b10;
+                        // Load instructions from memory
+                        if (instr_index < NUM_INSTR) begin
+                            // Read instruction into memory
+                            current_instr <= instructions[instr_index][31:0];
+                            instr_index <= instr_index + 2'b1;
+                            pc <= pc + 4;
+                        end else begin
+                            // All instructions loaded, switch to RUN_STATE
+                            state <= 1;
+                            reg_inst_write_sel <= 0;
+                            current_instr <= 0;
+                        end
                     end
-                end
-            // INSTRUCTION COPY
-            1:
-                begin
-                    rst_counter = 0;
-                    rst = ~n_rst;
-                    reg_inst_write_sel <= 1;
-                    inst_trans = 2'b10;
-                    // Load instructions from memory
-                    if (instr_index < NUM_INSTR) begin
-                        // Read instruction into memory
-                        current_instr <= instructions[instr_index][31:0];
-                        instr_index <= instr_index + 2'b1;
-                        pc <= pc + 4;
-                        rst <= n_rst;
-                    end else begin
-                        // All instructions loaded, switch to RUN_STATE
-                        state <= 2;
-                        reg_inst_write_sel <= 0;
-                        current_instr <= 0;
+                // RESET CPU
+                1:
+                    begin
+                        if (rst_counter < 2) begin
+                            rst <= 1;
+                            rst_counter = rst_counter + 1;
+                        end else if (rst_counter < 4)begin
+                            rst <= 0;
+                            rst_counter = rst_counter + 1;
+                        end else begin 
+                            state <= 2;
+                        end
                     end
-                end
-            // RUNTIME
-            2:
-                begin
-                    rst = ~n_rst;
-                    // Handle signal passing
-                    reg_inst_write_sel = inst_write_sel_out;
-                    pc <= inst_addr_out;
-                    inst_trans = inst_trans_out;
-                    
-                    led_reg = inst_addr_in[5:2];
-                    
-                    // Handle memory-mapped IO
-                    //if (mem_addr == LED_ADDR && mem_write_sel == 1) begin
-                        //led_reg <= mem_write_data[3:0];
-                   // end
-                    /*
-                    if (mem_addr == BTN_ADDR && mem_write_sel == 1) begin
-                        btn_reg <= mem_write_data[3:0];
+                // RUNTIME
+                2:
+                    begin
+                        rst <= r_btn;
+                        // Handle signal passing
+                        reg_inst_write_sel = inst_write_sel_out;
+                        pc <= inst_addr_out;
+                        inst_trans = inst_trans_out;
+                        
+                        led_reg = inst_addr_in[5:2];
+                        
+                        // Handle memory-mapped IO
+                        //if (mem_addr == LED_ADDR && mem_write_sel == 1) begin
+                            //led_reg <= mem_write_data[3:0];
+                       // end
+                        /*
+                        if (mem_addr == BTN_ADDR && mem_write_sel == 1) begin
+                            btn_reg <= mem_write_data[3:0];
+                        end
+                        
+                         if (mem_addr == SWC_ADDR && mem_write_sel == 1) begin
+                            swc_reg <= mem_write_data[3:0];
+                        end
+                        */
                     end
-                    
-                     if (mem_addr == SWC_ADDR && mem_write_sel == 1) begin
-                        swc_reg <= mem_write_data[3:0];
-                    end
-                    */
-                end
-            default: state <= 2'b0;
-        endcase
+                default: state <= 2'b0;
+            endcase
+        end
     end
 
 endmodule

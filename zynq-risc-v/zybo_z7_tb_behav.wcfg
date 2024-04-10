@@ -12,15 +12,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="5,373.534 ns"></ZoomStartTime>
-      <ZoomEndTime time="7,297.744 ns"></ZoomEndTime>
+      <ZoomStartTime time="18,496.492 ns"></ZoomStartTime>
+      <ZoomEndTime time="20,420.702 ns"></ZoomEndTime>
       <Cursor1Time time="20,100.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="149"></NameColumnWidth>
       <ValueColumnWidth column_width="183"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="27" />
+   <WVObjectSize size="26" />
    <wvobject fp_name="/zybo_z7_tb/dut/sysclk" type="logic">
       <obj_property name="ElementShortName">sysclk</obj_property>
       <obj_property name="ObjectShortName">sysclk</obj_property>
@@ -29,13 +29,17 @@
       <obj_property name="ElementShortName">led[3:0]</obj_property>
       <obj_property name="ObjectShortName">led[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
+   <wvobject fp_name="/zybo_z7_tb/dut/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
    </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/state" type="logic">
-      <obj_property name="ElementShortName">state</obj_property>
-      <obj_property name="ObjectShortName">state</obj_property>
+   <wvobject fp_name="/zybo_z7_tb/dut/r_btn" type="logic">
+      <obj_property name="ElementShortName">r_btn</obj_property>
+      <obj_property name="ObjectShortName">r_btn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/zybo_z7_tb/dut/state" type="array">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/zybo_z7_tb/dut/inst_rdata" type="array">
       <obj_property name="ElementShortName">inst_rdata[31:0]</obj_property>
@@ -120,13 +124,5 @@
    <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/ldst/HRDATA" type="array">
       <obj_property name="ElementShortName">HRDATA[31:0]</obj_property>
       <obj_property name="ObjectShortName">HRDATA[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/rst" type="logic">
-      <obj_property name="ElementShortName">rst</obj_property>
-      <obj_property name="ObjectShortName">rst</obj_property>
-   </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/n_rst" type="logic">
-      <obj_property name="ElementShortName">n_rst</obj_property>
-      <obj_property name="ObjectShortName">n_rst</obj_property>
    </wvobject>
 </wave_config>

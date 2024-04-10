@@ -15,7 +15,7 @@ module zybo_z7_tb ();
 
     initial begin
         clk = 1; // Initialize clock to 1
-        reset = 0;
+        reset = 1;
         $dumpfile("INST_MEM_output_wave.vcd");
         $dumpvars(0,zybo_z7_tb);
     end
@@ -31,7 +31,7 @@ module zybo_z7_tb ();
 
     Zybo_Z7_top dut(
         .sysclk(clk),
-        .n_rst(reset)
+        .r_btn(reset)
     );
 
     //----------------------------------------------------------------
