@@ -20,9 +20,19 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Zybo_Z7_top(
+module Zybo_Z7_top 
+#(
+    parameter LED_ADDR = 32'h00001000,
+    parameter SWC_ADDR = 32'h00001004,
+    parameter BTN_ADDR = 32'h00001008,
+    parameter NUM_INSTR = 28
+)
+(
     input wire sysclk,  // 125 MHz
-    input wire reset,
+    input wire n_rst,
+    input wire [2:0] btn,
+    input wire [3:0] sw,
+    
     output wire [3:0] led,
     inout wire [7:0] ja,
     inout wire [7:0] jc,
@@ -31,13 +41,15 @@ module Zybo_Z7_top(
     );
 
     // Registers
-    reg [31:0] instructions [0:3];
+    reg [31:0] instructions [0:NUM_INSTR];
     reg [31:0] current_instr;
-    reg [3:0] instr_index;
+    reg [31:0] instr_index;
     reg [31:0] pc;
-    reg state;
+    reg[1:0] state;
     reg reg_inst_write_sel;
     reg [1:0] inst_trans;
+    reg rst;
+    reg [3:0] rst_counter;
     
     // Instruction Memory Wires
     wire [31:0] inst_rdata;
@@ -72,16 +84,24 @@ module Zybo_Z7_top(
     wire mem_write_sel;    
     wire [1:0] mem_trans;
     
-    // LED assignment
-    assign led[0] = (state == 2'b0);
+    // Memory-Mapped IO registers
+    reg [3:0] led_reg;
+    //reg [3:0] swc_reg;
+    //reg [2:0] btn_reg;
+    
     //assign inst_addr_in = pc;
     assign inst_write = current_instr;
     assign inst_write_sel_in = reg_inst_write_sel;
     assign inst_trans_in = inst_trans;
     
+    // IO assignments
+    assign led = led_reg;
+    //assign scw_reg = sw;
+    //assign btn_reg = btn;
+    
     ecen5593_startercode_ca_top cpu (
     .CLK(sysclk),
-    .RST(reset),
+    .RST(rst),
     .if_code_HRDATA(inst_rdata),
     .if_code_HREADY(inst_ready),
     .if_code_HRESP(inst_resp),
@@ -106,7 +126,7 @@ module Zybo_Z7_top(
     );
     
     ahb3lite_sram1rw inst_mem (
-    .HRESETn(reset),
+    .HRESETn(rst),
     .HCLK(sysclk),
     .HSEL(1'b1),
     .HADDR(inst_addr_in),
@@ -123,7 +143,7 @@ module Zybo_Z7_top(
     );
     
     ahb3lite_sram1rw main_mem (
-    .HRESETn(reset),
+    .HRESETn(rst),
     .HCLK(sysclk),
     .HSEL(1'b1),
     .HADDR(mem_addr),
@@ -141,42 +161,82 @@ module Zybo_Z7_top(
 
     // Load instructions from file
     initial begin
-        $readmemh("instr.mem", instructions);
+        $readmemh("ldst_instr.mem", instructions);
+        //instructions[0] = 32'h00100093;
+        //instructions[1] = 32'h00208093;
+        //instructions[2] = 32'h00308093;
+        //instructions[3] = 32'h00108113;
+    
         current_instr = 0;
         inst_trans = 2'b10;
         reg_inst_write_sel = 1;
         instr_index = 0;
         pc = 4096;
+        rst = n_rst;
+        rst_counter = 0;
     end
     
-    assign inst_addr_in = (state == 2'b01) ? inst_addr_out : pc;
+    assign inst_addr_in = (state == 2) ? inst_addr_out : pc;
 
     // State machine
     always @ (posedge sysclk)
     begin
         case (state)
-            2'b0:
+            // POWER UP
+            0:
                 begin
+                    if (rst_counter < 2) begin
+                        rst <= 1;
+                        rst_counter = rst_counter + 1;
+                    end else begin
+                        state <= 2'b1;
+                    end
+                end
+            // INSTRUCTION COPY
+            1:
+                begin
+                    rst_counter = 0;
+                    rst = ~n_rst;
                     reg_inst_write_sel <= 1;
                     inst_trans = 2'b10;
                     // Load instructions from memory
-                    if (instr_index < 4) begin
+                    if (instr_index < NUM_INSTR) begin
                         // Read instruction into memory
                         current_instr <= instructions[instr_index][31:0];
                         instr_index <= instr_index + 2'b1;
                         pc <= pc + 4;
+                        rst <= n_rst;
                     end else begin
                         // All instructions loaded, switch to RUN_STATE
-                        state <= 2'b1;
+                        state <= 2;
                         reg_inst_write_sel <= 0;
                         current_instr <= 0;
                     end
                 end
-            2'b1:
+            // RUNTIME
+            2:
                 begin
+                    rst = ~n_rst;
+                    // Handle signal passing
                     reg_inst_write_sel = inst_write_sel_out;
                     pc <= inst_addr_out;
                     inst_trans = inst_trans_out;
+                    
+                    led_reg = inst_addr_in[5:2];
+                    
+                    // Handle memory-mapped IO
+                    //if (mem_addr == LED_ADDR && mem_write_sel == 1) begin
+                        //led_reg <= mem_write_data[3:0];
+                   // end
+                    /*
+                    if (mem_addr == BTN_ADDR && mem_write_sel == 1) begin
+                        btn_reg <= mem_write_data[3:0];
+                    end
+                    
+                     if (mem_addr == SWC_ADDR && mem_write_sel == 1) begin
+                        swc_reg <= mem_write_data[3:0];
+                    end
+                    */
                 end
             default: state <= 2'b0;
         endcase

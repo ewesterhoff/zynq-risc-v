@@ -1,4 +1,4 @@
-Running: xsim.dir/zybo_z7_tb_behav/xsimk.exe -simmode gui -wdb zybo_z7_tb_behav.wdb -simrunnum 0 -socket 58197
+Running: xsim.dir/zybo_z7_tb_behav/xsimk.exe -simmode gui -wdb zybo_z7_tb_behav.wdb -simrunnum 0 -socket 58014
 Design successfully loaded
 Design Loading Memory Usage: 8376 KB (Peak: 8376 KB)
-Design Loading CPU Usage: 15 ms
+Design Loading CPU Usage: 0 ms

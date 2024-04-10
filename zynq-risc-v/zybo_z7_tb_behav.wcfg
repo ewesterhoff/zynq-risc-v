@@ -12,20 +12,24 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,273.632 ns"></ZoomEndTime>
-      <Cursor1Time time="3,100.000 ns"></Cursor1Time>
+      <ZoomStartTime time="5,373.534 ns"></ZoomStartTime>
+      <ZoomEndTime time="7,297.744 ns"></ZoomEndTime>
+      <Cursor1Time time="20,100.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="208"></NameColumnWidth>
-      <ValueColumnWidth column_width="269"></ValueColumnWidth>
+      <NameColumnWidth column_width="149"></NameColumnWidth>
+      <ValueColumnWidth column_width="183"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="21" />
+   <WVObjectSize size="27" />
    <wvobject fp_name="/zybo_z7_tb/dut/sysclk" type="logic">
       <obj_property name="ElementShortName">sysclk</obj_property>
       <obj_property name="ObjectShortName">sysclk</obj_property>
    </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/reset" type="logic">
+   <wvobject fp_name="/zybo_z7_tb/dut/led" type="array">
+      <obj_property name="ElementShortName">led[3:0]</obj_property>
+      <obj_property name="ObjectShortName">led[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/zybo_z7_tb/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
@@ -104,5 +108,25 @@
    <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/s_me_pcsrc" type="logic">
       <obj_property name="ElementShortName">s_me_pcsrc</obj_property>
       <obj_property name="ObjectShortName">s_me_pcsrc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/zybo_z7_tb/dut/main_mem/HWDATA" type="array">
+      <obj_property name="ElementShortName">HWDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HWDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/zybo_z7_tb/dut/main_mem/HADDR" type="array">
+      <obj_property name="ElementShortName">HADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/ldst/HRDATA" type="array">
+      <obj_property name="ElementShortName">HRDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HRDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/zybo_z7_tb/dut/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/zybo_z7_tb/dut/n_rst" type="logic">
+      <obj_property name="ElementShortName">n_rst</obj_property>
+      <obj_property name="ObjectShortName">n_rst</obj_property>
    </wvobject>
 </wave_config>

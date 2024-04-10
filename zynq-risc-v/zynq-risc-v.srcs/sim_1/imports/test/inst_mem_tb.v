@@ -15,7 +15,7 @@ module zybo_z7_tb ();
 
     initial begin
         clk = 1; // Initialize clock to 1
-        reset = 1;
+        reset = 0;
         $dumpfile("INST_MEM_output_wave.vcd");
         $dumpvars(0,zybo_z7_tb);
     end
@@ -31,7 +31,7 @@ module zybo_z7_tb ();
 
     Zybo_Z7_top dut(
         .sysclk(clk),
-        .reset(reset)
+        .n_rst(reset)
     );
 
     //----------------------------------------------------------------
@@ -39,12 +39,12 @@ module zybo_z7_tb ();
     //----------------------------------------------------------------
     initial begin
         $display("\nStarting Test.\n");
-        repeat (30) begin
+        repeat (200) begin
             #1; // Wait for one clock cycle
-            if ($time == 10)
-                reset = 0;
-            if ($time == 14)
-                reset = 1;
+            //if ($time == 100)
+                //reset = 1;
+            //if ($time == 104)
+                //reset = 0;
         end
         #1; // Wait for one more clock cycle after reset
 
