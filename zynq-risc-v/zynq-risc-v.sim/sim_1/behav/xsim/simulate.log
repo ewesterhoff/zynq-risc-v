@@ -1,0 +1,15 @@
+Time resolution is 1 ps
+INFO   : No memory technology specified. Using generic inferred memory (zybo_z7_tb.dut.inst_mem.ram_inst)
+INFO   : No memory technology specified. Using generic inferred memory (zybo_z7_tb.dut.main_mem.ram_inst)
+
+Starting Test.
+
+INFO   : No memory technology specified. Using generic inferred memory (zybo_z7_tb.dut.inst_mem.ram_inst)
+INFO   : No memory technology specified. Using generic inferred memory (zybo_z7_tb.dut.main_mem.ram_inst)
+
+Starting Test.
+
+
+Successfully completed test!
+
+$finish called at time : 2000100 ns : File "C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sim_1/imports/test/inst_mem_tb.v" Line 52

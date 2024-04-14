@@ -25,7 +25,7 @@ module Zybo_Z7_top
     parameter LED_ADDR = 32'h00001000,
     parameter SWC_ADDR = 32'h00001004,
     parameter BTN_ADDR = 32'h00001008,
-    parameter NUM_INSTR = 28
+    parameter NUM_INSTR = 40
 )
 (
     input wire sysclk,  // 125 MHz
@@ -161,11 +161,7 @@ module Zybo_Z7_top
 
     // Load instructions from file
     initial begin
-        $readmemh("ldst_instr.mem", instructions);
-        //instructions[0] = 32'h00100093;
-        //instructions[1] = 32'h00208093;
-        //instructions[2] = 32'h00308093;
-        //instructions[3] = 32'h00108113;
+        $readmemh("my_program.mem", instructions);
     
         current_instr = 0;
         inst_trans = 2'b10;
@@ -227,12 +223,12 @@ module Zybo_Z7_top
                         pc <= inst_addr_out;
                         inst_trans = inst_trans_out;
                         
-                        led_reg = inst_addr_in[5:2];
+                        //led_reg = inst_addr_in[5:2];
                         
                         // Handle memory-mapped IO
-                        //if (mem_addr == LED_ADDR && mem_write_sel == 1) begin
-                            //led_reg <= mem_write_data[3:0];
-                       // end
+                        if (mem_addr == LED_ADDR && mem_write_sel == 1) begin
+                            led_reg <= mem_write_data[3:0];
+                        end
                         /*
                         if (mem_addr == BTN_ADDR && mem_write_sel == 1) begin
                             btn_reg <= mem_write_data[3:0];

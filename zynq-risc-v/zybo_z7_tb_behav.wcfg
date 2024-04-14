@@ -12,15 +12,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="18,496.492 ns"></ZoomStartTime>
-      <ZoomEndTime time="20,420.702 ns"></ZoomEndTime>
-      <Cursor1Time time="20,100.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="2,160.894 ns"></ZoomEndTime>
+      <Cursor1Time time="12,845.988 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="149"></NameColumnWidth>
-      <ValueColumnWidth column_width="183"></ValueColumnWidth>
+      <ValueColumnWidth column_width="179"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="26" />
+   <WVObjectSize size="24" />
    <wvobject fp_name="/zybo_z7_tb/dut/sysclk" type="logic">
       <obj_property name="ElementShortName">sysclk</obj_property>
       <obj_property name="ObjectShortName">sysclk</obj_property>
@@ -45,25 +45,9 @@
       <obj_property name="ElementShortName">inst_rdata[31:0]</obj_property>
       <obj_property name="ObjectShortName">inst_rdata[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/inst_write" type="array">
-      <obj_property name="ElementShortName">inst_write[31:0]</obj_property>
-      <obj_property name="ObjectShortName">inst_write[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/inst_addr_out" type="array">
-      <obj_property name="ElementShortName">inst_addr_out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">inst_addr_out[31:0]</obj_property>
-   </wvobject>
    <wvobject fp_name="/zybo_z7_tb/dut/inst_addr_in" type="array">
       <obj_property name="ElementShortName">inst_addr_in[31:0]</obj_property>
       <obj_property name="ObjectShortName">inst_addr_in[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/mem_read_data" type="array">
-      <obj_property name="ElementShortName">mem_read_data[31:0]</obj_property>
-      <obj_property name="ObjectShortName">mem_read_data[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/mem_write_data" type="array">
-      <obj_property name="ElementShortName">mem_write_data[31:0]</obj_property>
-      <obj_property name="ObjectShortName">mem_write_data[31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/zybo_z7_tb/dut/mem_addr" type="array">
       <obj_property name="ElementShortName">mem_addr[31:0]</obj_property>
@@ -72,6 +56,14 @@
    <wvobject fp_name="/zybo_z7_tb/dut/mem_write_sel" type="logic">
       <obj_property name="ElementShortName">mem_write_sel</obj_property>
       <obj_property name="ObjectShortName">mem_write_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/zybo_z7_tb/dut/mem_read_data" type="array">
+      <obj_property name="ElementShortName">mem_read_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_read_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/zybo_z7_tb/dut/mem_write_data" type="array">
+      <obj_property name="ElementShortName">mem_write_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_write_data[31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/zybo_z7_tb/dut/cpu/ecen5593_startercode/core/s_id_opc" type="array">
       <obj_property name="ElementShortName">s_id_opc[16:0]</obj_property>

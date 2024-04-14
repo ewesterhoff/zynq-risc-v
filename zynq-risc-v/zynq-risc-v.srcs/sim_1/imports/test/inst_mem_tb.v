@@ -39,12 +39,8 @@ module zybo_z7_tb ();
     //----------------------------------------------------------------
     initial begin
         $display("\nStarting Test.\n");
-        repeat (200) begin
-            #1; // Wait for one clock cycle
-            //if ($time == 100)
-                //reset = 1;
-            //if ($time == 104)
-                //reset = 0;
+        repeat (5000) begin
+            #1;
         end
         #1; // Wait for one more clock cycle after reset
 

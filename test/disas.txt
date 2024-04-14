@@ -1,0 +1,79 @@
+main.xexe:	file format elf32-codasip-le
+
+
+Disassembly of section .text:
+
+00001000 main:
+; int main() {
+    1000: 13 01 81 fe                  	addi x2, x2, 0xfe8
+    1004: 23 2a 01 00                  	sw x0, 0x14 ( x2 )
+    1008: b7 17 00 00                  	lui x15, 0x1
+;     volatile unsigned int *led = (unsigned int *)0x00001000;
+    100c: 23 28 f1 00                  	sw x15, 0x10 ( x2 )
+    1010: b7 17 00 00                  	lui x15, 0x1
+    1014: 37 8f 38 00                  	lui x30, 0x388
+    1018: 13 5f cf 00                  	srli x30, x30, 0xc
+    101c: b3 e7 e7 01                  	or x15, x15, x30
+;     unsigned int delay_count = 5000;
+    1020: 23 26 f1 00                  	sw x15, 0xc ( x2 )
+;     while (1) {
+    1024: 6f 00 40 00                  	jal x0, 0x1028 <.LBB0_1>
+
+00001028 .LBB0_1:
+;         *led = 1;  // Turn on LED
+    1028: 83 27 01 01                  	lw x15, 0x10 ( x2 )
+    102c: 13 27 10 00                  	slti x14, x0, 0x1
+    1030: 23 a0 e7 00                  	sw x14, 0x0 ( x15 )
+;         for (unsigned int i = 0; i < delay_count; ++i) {
+    1034: 23 24 01 00                  	sw x0, 0x8 ( x2 )
+    1038: 6f 00 40 00                  	jal x0, 0x103c <.LBB0_2>
+
+0000103c .LBB0_2:
+    103c: 83 27 81 00                  	lw x15, 0x8 ( x2 )
+    1040: 03 27 c1 00                  	lw x14, 0xc ( x2 )
+    1044: 63 f0 e7 02                  	bgeu x15, x14, 0x1064 <.LBB0_5>
+    1048: 6f 00 40 00                  	jal x0, 0x104c <.LBB0_3>
+
+0000104c .LBB0_3:
+;         asm("nop");
+    104c: 13 00 00 00                  	addi x0, x0, 0x0
+;     }
+    1050: 6f 00 40 00                  	jal x0, 0x1054 <.LBB0_4>
+
+00001054 .LBB0_4:
+;         for (unsigned int i = 0; i < delay_count; ++i) {
+    1054: 83 27 81 00                  	lw x15, 0x8 ( x2 )
+    1058: 93 87 17 00                  	addi x15, x15, 0x1
+    105c: 23 24 f1 00                  	sw x15, 0x8 ( x2 )
+    1060: 6f f0 df fd                  	jal x0, 0x103c <.LBB0_2>
+
+00001064 .LBB0_5:
+;         *led = 0;  // Turn off LED
+    1064: 83 27 01 01                  	lw x15, 0x10 ( x2 )
+    1068: 23 a0 07 00                  	sw x0, 0x0 ( x15 )
+;         for (unsigned int i = 0; i < delay_count; ++i) {
+    106c: 23 22 01 00                  	sw x0, 0x4 ( x2 )
+    1070: 6f 00 40 00                  	jal x0, 0x1074 <.LBB0_6>
+
+00001074 .LBB0_6:
+    1074: 83 27 41 00                  	lw x15, 0x4 ( x2 )
+    1078: 03 27 c1 00                  	lw x14, 0xc ( x2 )
+    107c: 63 f0 e7 02                  	bgeu x15, x14, 0x109c <.LBB0_9>
+    1080: 6f 00 40 00                  	jal x0, 0x1084 <.LBB0_7>
+
+00001084 .LBB0_7:
+;         asm("nop");
+    1084: 13 00 00 00                  	addi x0, x0, 0x0
+;     }
+    1088: 6f 00 40 00                  	jal x0, 0x108c <.LBB0_8>
+
+0000108c .LBB0_8:
+;         for (unsigned int i = 0; i < delay_count; ++i) {
+    108c: 83 27 41 00                  	lw x15, 0x4 ( x2 )
+    1090: 93 87 17 00                  	addi x15, x15, 0x1
+    1094: 23 22 f1 00                  	sw x15, 0x4 ( x2 )
+    1098: 6f f0 df fd                  	jal x0, 0x1074 <.LBB0_6>
+
+0000109c .LBB0_9:
+;     while (1) {
+    109c: 6f f0 df f8                  	jal x0, 0x1028 <.LBB0_1>
