@@ -7,3 +7,6 @@
 [submodule "third-party/memory"]
 	path = third-party/memory
 	url = git@github.com:RoaLogic/memory.git
+[submodule "third-party/FPGA-SDcard-Reader"]
+	path = third-party/FPGA-SDcard-Reader
+	url = https://github.com/WangXuan95/FPGA-SDcard-Reader.git
