@@ -37,13 +37,27 @@ module Zybo_Z7_top
     inout wire [7:0] ja,
     inout wire [7:0] jc,
     inout wire [7:0] jd,
-    inout wire [7:0] je
+    inout wire [7:0] je,
+    
+    // when sdcard_pwr_n = 0, SDcard power on
+    output wire sdcard_pwr_n,
+    // signals connect to SD bus
+    output wire sdclk,
+    inout sdcmd,
+    input  wire sddat0,
+    output wire sddat1, sddat2, sddat,
+    output wire [3:0] card_status,
+    output wire [1:0] card_type,
+    output wire [1:0] filesystem_type,
+    output wire file_found
+ 
     );
 
     // Registers
     reg [31:0] instructions [0:NUM_INSTR];
     reg [31:0] current_instr;
     reg [31:0] instr_index;
+    reg [31:0] read_index;
     reg [31:0] pc;
     reg[1:0] state;
     reg reg_inst_write_sel;
@@ -98,6 +112,34 @@ module Zybo_Z7_top
     assign led = led_reg;
     //assign scw_reg = sw;
     //assign btn_reg = btn;
+    
+    // SD card assignments
+    assign sdcard_pwr_on = 1'b0;    // keep SD Card powered on
+    assign {sddat1, sddat2, sddat3} = 3'b111;  // Prevent SD card from entering SPI mode
+
+    // may need to implement clock divider, example is running at 50MHz
+    
+    // sd file reader
+    wire outen; // When outen = 1, a byte of file content is read from outbyte
+    wire [7:0] outbyte; // byte of file content
+    
+    sd_file_reader #(
+        .FILE_NAME_LEN(14), // length of the file name in bytes (ASCII)
+        .FILE_NAME ("my_program.mem"),  // file name to be read
+        .CLK_DIV (1) // need to go from 125MHZ to 50MHz  
+    ) u_sd_file_reader (
+        .rstn(rst),
+        .clk(sysclk), // need to be 50MHz
+        .sdclk(sdclk),
+        .sdcmd (sdcmd),
+        .sddat0(sddat0),
+        .card_stat (card_status),  // card initialize status
+        .card_type (card_type), // 0 = unknown, 1 = SDv1, 2 = SDv2, 3 = SDHCv2
+        .filesystem_type (filesystem_type), // 0 = unassigned, 1 = unknown, 2 = FAT16, 3 = FAT32
+        .file_found (file_found), 
+        .outen (outen),
+        .outbyte (outbyte)
+    );
     
     ecen5593_startercode_ca_top cpu (
     .CLK(sysclk),
@@ -161,15 +203,47 @@ module Zybo_Z7_top
 
     // Load instructions from file
     initial begin
-        $readmemh("my_program.mem", instructions);
+//        $readmemh("my_program.mem", instructions);
     
         current_instr = 0;
         inst_trans = 2'b10;
         reg_inst_write_sel = 1;
         instr_index = 0;
+        read_index = 0;
         pc = 4096;
         rst = 1;
         rst_counter = 0;
+    end
+    
+    // Load instructions from the SD Card
+    reg [31:0] buffer; // temp buffer to hold one instruction
+    reg [2:0] byte_count = 0; // counts bytes in intruction
+    reg file_done = 0;
+    
+    always @(posedge sysclk)
+    begin
+        if(rst) begin
+            read_index <= 0;
+            byte_count <= 0;
+            buffer <= 0;
+            file_done <= 0;
+         end else if(outen) begin
+            // collect four bytes to create one 32-bit instruction
+            buffer <= (buffer << 8) | outbyte; // shift buffer and or in new byte
+            byte_count <= byte_count + 1;
+            
+            // check if a full instruction has been read
+            if(byte_count == 4) begin
+                instructions[read_index] <= buffer;
+                read_index = read_index + 1;
+                byte_count <=0; // reset for next instruction
+                
+                // handle when all instructions have been read
+                if (read_index == NUM_INSTR) begin
+                    file_done <= 1;
+                end
+            end
+         end
     end
     
     assign inst_addr_in = (state == 2) ? inst_addr_out : pc;
@@ -178,12 +252,15 @@ module Zybo_Z7_top
     always @ (posedge sysclk)
     begin
         if (r_btn == 0) begin
+            read_index <= 0;
+            byte_count <= 0;
+            buffer <= 0;
             state <= 0;
         end else begin    
             case (state)
                 // INSTRUCTION COPY
                 0:
-                    begin
+                    if(file_done) begin
                         rst_counter = 0;
                         rst <= r_btn;
                         reg_inst_write_sel <= 1;
