@@ -6,7 +6,18 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Monsieur Peepee/Desktop/co
 INFO: [VRFC 10-311] analyzing module sdcmd_ctrl
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/RTL/sd_file_reader.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module sd_file_reader
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.gen/sources_1/ip/clk_wiz_0_4/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.gen/sources_1/ip/clk_wiz_0_4/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/FPGA-SDcard-Reader/sd_fake.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sd_fake
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sim_1/imports/test/inst_mem_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Zybo_Z7_top
 WARNING: [VRFC 10-3609] overwriting previous definition of module 'Zybo_Z7_top' [C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sim_1/imports/test/../../../sources_1/new/Zybo_Z7_top.v:23]
-INFO: [VRFC 10-311] analyzing module zybo_z7_tb
+INFO: [VRFC 10-311] analyzing module sd_fake
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'sd_fake' [C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sim_1/imports/test/../../../sources_1/imports/FPGA-SDcard-Reader/sd_fake.v:9]
+INFO: [VRFC 10-311] analyzing module sd_card_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sim_1/new/sd_card_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sd_card_tb
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'sd_card_tb' [C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sim_1/new/sd_card_tb.v:24]

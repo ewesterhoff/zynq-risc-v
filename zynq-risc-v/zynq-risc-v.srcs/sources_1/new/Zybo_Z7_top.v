@@ -28,7 +28,7 @@ module Zybo_Z7_top
     parameter NUM_INSTR = 40
 )
 (
-    input wire sysclk,  // 125 MHz
+    inout wire sysclk,  // 125 MHz
     input wire r_btn,
     input wire [2:0] btn,
     input wire [3:0] sw,
@@ -50,7 +50,6 @@ module Zybo_Z7_top
     output wire [1:0] card_type,
     output wire [1:0] filesystem_type,
     output wire file_found
- 
     );
 
     // Registers
@@ -117,7 +116,16 @@ module Zybo_Z7_top
     assign sdcard_pwr_on = 1'b0;    // keep SD Card powered on
     assign {sddat1, sddat2, sddat3} = 3'b111;  // Prevent SD card from entering SPI mode
 
-    // may need to implement clock divider, example is running at 50MHz
+    // clock divider for SD Card
+//    clk_wiz_0 clock_div(
+//    // Clock out ports
+//    .clk_out1(sdclk),     // output clk_out1
+//    // Status and control signals
+//    .reset(reset), // input reset
+//    .locked(locked),       // output locked
+//   // Clock in ports
+//    .clk_in1(sysclk)      // 125MHz
+//    );
     
     // sd file reader
     wire outen; // When outen = 1, a byte of file content is read from outbyte
@@ -129,7 +137,7 @@ module Zybo_Z7_top
         .CLK_DIV (1) // need to go from 125MHZ to 50MHz  
     ) u_sd_file_reader (
         .rstn(rst),
-        .clk(sysclk), // need to be 50MHz
+        .clk(sysclk), 
         .sdclk(sdclk),
         .sdcmd (sdcmd),
         .sddat0(sddat0),

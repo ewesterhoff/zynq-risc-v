@@ -1,7 +1,7 @@
 Vivado Simulator v2023.2
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot zybo_z7_tb_behav xil_defaultlib.zybo_z7_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2023.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot zybo_z7_tb_behav xil_defaultlib.zybo_z7_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -10,11 +10,23 @@ Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4100] "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sim_1/imports/test/inst_mem_tb.v" Line 5. Module zybo_z7_tb has a timescale but at least one module in design doesn't have timescale.
 WARNING: [XSIM 43-4100] "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sim_1/imports/test/../../../sources_1/new/Zybo_Z7_top.v" Line 23. Module Zybo_Z7_top has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.gen/sources_1/ip/clk_wiz_0_4/clk_wiz_0.v" Line 65. Module clk_wiz_0 has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.gen/sources_1/ip/clk_wiz_0_4/clk_wiz_0_clk_wiz.v" Line 65. Module clk_wiz_0_clk_wiz has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2023.2/rdi_builds/continuous/2023_10_13_4029153/data/verilog/src/unisims/IBUF.v" Line 29. Module IBUF has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2023.2/rdi_builds/continuous/2023_10_13_4029153/data/verilog/src/unisims/MMCME2_ADV.v" Line 123. Module MMCME2_ADV(CLKFBOUT_MULT_F=8.0,CLKIN1_PERIOD=8.0,CLKOUT0_DIVIDE_F=20.0) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2023.2/rdi_builds/continuous/2023_10_13_4029153/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2023.2/rdi_builds/continuous/2023_10_13_4029153/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
 WARNING: [XSIM 43-4100] "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/RTL/sd_file_reader.v" Line 12. Module sd_file_reader(FILE_NAME_LEN=14,FILE_NAME="my_program.mem",CLK_DIV=3'b01) has a timescale but at least one module in design doesn't have timescale.
 WARNING: [XSIM 43-4100] "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/RTL/sd_reader.v" Line 10. Module sd_reader(CLK_DIV=3'b01) has a timescale but at least one module in design doesn't have timescale.
 WARNING: [XSIM 43-4100] "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/RTL/sdcmd_ctrl.v" Line 10. Module sdcmd_ctrl has a timescale but at least one module in design doesn't have timescale.
 WARNING: [XSIM 43-4100] "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sim_1/imports/test/inst_mem_tb.v" Line 5. Module zybo_z7_tb has a timescale but at least one module in design doesn't have timescale.
 WARNING: [XSIM 43-4100] "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sim_1/imports/test/../../../sources_1/new/Zybo_Z7_top.v" Line 23. Module Zybo_Z7_top has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.gen/sources_1/ip/clk_wiz_0_4/clk_wiz_0.v" Line 65. Module clk_wiz_0 has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.gen/sources_1/ip/clk_wiz_0_4/clk_wiz_0_clk_wiz.v" Line 65. Module clk_wiz_0_clk_wiz has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2023.2/rdi_builds/continuous/2023_10_13_4029153/data/verilog/src/unisims/IBUF.v" Line 29. Module IBUF has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2023.2/rdi_builds/continuous/2023_10_13_4029153/data/verilog/src/unisims/MMCME2_ADV.v" Line 123. Module MMCME2_ADV(CLKFBOUT_MULT_F=8.0,CLKIN1_PERIOD=8.0,CLKOUT0_DIVIDE_F=20.0) has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2023.2/rdi_builds/continuous/2023_10_13_4029153/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/wrk/ci/prod/2023.2/rdi_builds/continuous/2023_10_13_4029153/data/verilog/src/unisims/BUFG.v" Line 27. Module BUFG has a timescale but at least one module in design doesn't have timescale.
 WARNING: [XSIM 43-4100] "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/RTL/sd_file_reader.v" Line 12. Module sd_file_reader(FILE_NAME_LEN=14,FILE_NAME="my_program.mem",CLK_DIV=3'b01) has a timescale but at least one module in design doesn't have timescale.
 WARNING: [XSIM 43-4100] "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/RTL/sd_reader.v" Line 10. Module sd_reader(CLK_DIV=3'b01) has a timescale but at least one module in design doesn't have timescale.
 WARNING: [XSIM 43-4100] "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/RTL/sdcmd_ctrl.v" Line 10. Module sdcmd_ctrl has a timescale but at least one module in design doesn't have timescale.
@@ -23,6 +35,11 @@ WARNING: [XSIM 43-4100] "C:/Users/Monsieur Peepee/Desktop/comp arc/zynq-risc-v/z
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling package xil_defaultlib.ahb3lite_pkg
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=8.0,C...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
 Compiling module xil_defaultlib.sdcmd_ctrl
 Compiling module xil_defaultlib.sd_reader(CLK_DIV=3'b01)
 Compiling module xil_defaultlib.sd_file_reader(FILE_NAME_LEN=14,...

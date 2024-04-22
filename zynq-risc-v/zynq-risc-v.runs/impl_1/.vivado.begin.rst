@@ -1,30 +1,10 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="etwes" Host="EWESTERHOFF" Pid="45400" HostCore="20" HostMemory="016834945024">
+    <Process Command="vivado.bat" Owner="Monsieur Peepee" Host="SURFACEFUCK" Pid="6788" HostCore="8" HostMemory="016745943040">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="etwes" Host="EWESTERHOFF" Pid="284" HostCore="20" HostMemory="016834945024">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="etwes" Host="EWESTERHOFF" Pid="50320" HostCore="20" HostMemory="016834945024">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="etwes" Host="EWESTERHOFF" Pid="26840" HostCore="20" HostMemory="016834945024">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="etwes" Host="EWESTERHOFF" Pid="51624" HostCore="20" HostMemory="016834945024">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="etwes" Host="EWESTERHOFF" Pid="32144" HostCore="20" HostMemory="016834945024">
+    <Process Command="vivado.bat" Owner="Monsieur Peepee" Host="SURFACEFUCK" Pid="24228" HostCore="8" HostMemory="016745943040">
     </Process>
 </ProcessHandle>
