@@ -1,0 +1,4 @@
+Zybo_Z7_top: Zybo_Z7_top__GC0, ahb3lite_sram1rw, 
+ahb3lite_sram1rw: ahb3lite_sram1rw__GC0, rl_ram_1r1w, 
+rl_ram_1r1w: rl_ram_1r1w__GC0, rl_ram_1r1w_generic, 
+rl_ram_1r1w_generic: rl_ram_1r1w_generic__GB1, rl_ram_1r1w_generic__GB0, 

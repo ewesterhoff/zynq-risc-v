@@ -70,13 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 5
-set_param synth.incrementalSynthesisCache C:/Users/etwes/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-15428-EWESTERHOFF/incrSyn
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z010clg400-1
 
@@ -92,7 +87,7 @@ set_property ip_output_repo c:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_mem C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/new/mem/ldst_instr.mem
+read_mem C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/new/mem/my_program.mem
 read_verilog -library xil_defaultlib -sv {
   C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/third-party/ahb3lite_pkg/rtl/verilog/ahb3lite_pkg.sv
   C:/Users/etwes/OneDrive/Documents/Sping_2024/Adv_Cmp_Arch/zynq-risc-v/zynq-risc-v/zynq-risc-v.srcs/sources_1/imports/third-party/ahb3lite_memory/rtl/verilog/ahb3lite_sram1rw.sv

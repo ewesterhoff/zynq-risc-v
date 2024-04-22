@@ -50,6 +50,7 @@ module Zybo_Z7_top
     reg [1:0] inst_trans;
     reg rst;
     reg [3:0] rst_counter;
+    reg [31:0] last_mem_addr;
     
     // Instruction Memory Wires
     wire [31:0] inst_rdata;
@@ -170,6 +171,7 @@ module Zybo_Z7_top
         pc = 4096;
         rst = 1;
         rst_counter = 0;
+        last_mem_addr = 0;
     end
     
     assign inst_addr_in = (state == 2) ? inst_addr_out : pc;
@@ -226,9 +228,10 @@ module Zybo_Z7_top
                         //led_reg = inst_addr_in[5:2];
                         
                         // Handle memory-mapped IO
-                        if (mem_addr == LED_ADDR && mem_write_sel == 1) begin
+                        if (last_mem_addr == LED_ADDR && mem_write_sel == 1) begin
                             led_reg <= mem_write_data[3:0];
                         end
+                        last_mem_addr <= mem_addr;
                         /*
                         if (mem_addr == BTN_ADDR && mem_write_sel == 1) begin
                             btn_reg <= mem_write_data[3:0];

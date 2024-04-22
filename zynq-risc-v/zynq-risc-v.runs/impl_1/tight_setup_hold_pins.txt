@@ -1,0 +1,43 @@
++====================+===================+====================================================================+
+| Launch Setup Clock | Launch Hold Clock | Pin                                                                |
++====================+===================+====================================================================+
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_pc/ASYNC_LOW.Q_reg_reg[18]/D       |
+| sys_clk_pin        | sys_clk_pin       | inst_mem/contention_reg/D                                          |
+| sys_clk_pin        | sys_clk_pin       | inst_mem/ram_inst/contention_reg_reg/D                             |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_pc/ASYNC_LOW.Q_reg_reg[19]/D       |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[0]/D     |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[15]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[12]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[23]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[25]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[22]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[21]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[13]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[8]/D     |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[26]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[9]/D     |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[20]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[27]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[19]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[18]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[10]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_ex_immed/ASYNC_LOW.Q_reg_reg[5]/D  |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_ex_immed/ASYNC_LOW.Q_reg_reg[6]/D  |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[11]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_ex_immed/ASYNC_LOW.Q_reg_reg[8]/D  |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_ex_immed/ASYNC_LOW.Q_reg_reg[9]/D  |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_ex_immed/ASYNC_LOW.Q_reg_reg[10]/D |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[29]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[28]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[24]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[16]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[6]/D     |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[7]/D     |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[1]/D     |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[3]/D     |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[2]/D     |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_ex_rd/ASYNC_LOW.Q_reg_reg[4]/D     |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_ex_rd/ASYNC_LOW.Q_reg_reg[1]/D     |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_ex_rs1/ASYNC_LOW.Q_reg_reg[4]/D    |
+| sys_clk_pin        | sys_clk_pin       | cpu/ecen5593_startercode/core/r_id_pc/ASYNC_LOW.Q_reg_reg[4]/D     |
++--------------------+-------------------+--------------------------------------------------------------------+

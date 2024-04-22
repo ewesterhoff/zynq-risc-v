@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1712781655" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ecen5593_startercode_ca_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1713208310" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ecen5593_startercode_ca_top.dcp">
   <File Type="PA-TCL" Name="Zybo_Z7_top.tcl"/>
   <File Type="REPORTS-TCL" Name="Zybo_Z7_top_reports.tcl"/>
   <File Type="RDS-RDS" Name="Zybo_Z7_top.vds"/>
@@ -321,7 +321,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/mem/ldst_instr.mem">
+    <File Path="$PSRCDIR/sources_1/new/mem/my_program.mem">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>

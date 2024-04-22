@@ -39,7 +39,7 @@ module zybo_z7_tb ();
     //----------------------------------------------------------------
     initial begin
         $display("\nStarting Test.\n");
-        repeat (5000) begin
+        repeat (1000) begin
             #1;
         end
         #1; // Wait for one more clock cycle after reset

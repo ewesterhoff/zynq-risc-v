@@ -1,0 +1,5 @@
+rl_ram_1r1w_generic__GB0 206DFE66D00
+rl_ram_1r1w_generic__GB1 2068DF125E0
+rl_ram_1r1w__GC0 2068DF11020
+ahb3lite_sram1rw__GC0 2068DF11220
+Zybo_Z7_top__GC0 2068DF14EE0

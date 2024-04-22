@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date                      : Wed Apr 10 14:46:36 2024
+| Date                      : Mon Apr 15 13:30:44 2024
 | Host                      : EWESTERHOFF running 64-bit major release  (build 9200)
 | Command                   : report_io -file Zybo_Z7_top_io_placed.rpt
 | Design                    : Zybo_Z7_top
@@ -430,7 +430,7 @@ Table of Contents
 | Y13        |             |            | NC                      | Not Connected |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | Y14        | jc[5]       | High Range | IO_L8N_T1_34            | BIDIR         | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | Y15        |             |            | GND                     | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
-| Y16        | n_rst       | High Range | IO_L7P_T1_34            | INPUT         | LVCMOS33    |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| Y16        | r_btn       | High Range | IO_L7P_T1_34            | INPUT         | LVCMOS33    |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | Y17        | je[7]       | High Range | IO_L7N_T1_34            | BIDIR         | LVCMOS33    |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | Y18        |             | High Range | IO_L17P_T2_34           | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | Y19        |             | High Range | IO_L17N_T2_34           | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
