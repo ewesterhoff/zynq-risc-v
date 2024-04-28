@@ -11,7 +11,7 @@
  *  in Codasip license agreement under which you obtained this file.
  * 
  *  \file
- *  \date    2024-02-27
+ *  \date    2024-04-28
  *  \author  Codasip (c) HW generator
  *  \version 9.4.2
  *  \brief   Contains module definition of the 'ecen5593_startercode_ca_core_t' ASIP core.
@@ -894,7 +894,7 @@ module ecen5593_startercode_ca_core_t(
     // register instance:
     d_ff_rst_we_t #(
         .BIT_WIDTH(32'sd32),
-        .DEFAULT_VALUE(32'h00001000),
+        .DEFAULT_VALUE(32'h0000103c),
         .RESET_LEVEL(1'b0),
         .RESET_SYNC(1'b0)
     ) r_pc (

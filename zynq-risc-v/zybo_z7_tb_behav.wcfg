@@ -12,15 +12,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="8.259073 us"></ZoomStartTime>
-      <ZoomEndTime time="10.479406 us"></ZoomEndTime>
-      <Cursor1Time time="10.100000 us"></Cursor1Time>
+      <ZoomStartTime time="17,791.380 ns"></ZoomStartTime>
+      <ZoomEndTime time="19,221.381 ns"></ZoomEndTime>
+      <Cursor1Time time="14,707.380 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="149"></NameColumnWidth>
-      <ValueColumnWidth column_width="171"></ValueColumnWidth>
+      <ValueColumnWidth column_width="167"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="27" />
+   <WVObjectSize size="28" />
    <wvobject fp_name="/zybo_z7_tb/dut/sysclk" type="logic">
       <obj_property name="ElementShortName">sysclk</obj_property>
       <obj_property name="ObjectShortName">sysclk</obj_property>
@@ -53,10 +53,6 @@
       <obj_property name="ElementShortName">mem_addr[31:0]</obj_property>
       <obj_property name="ObjectShortName">mem_addr[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/zybo_z7_tb/dut/last_mem_addr" type="array">
-      <obj_property name="ElementShortName">last_mem_addr[31:0]</obj_property>
-      <obj_property name="ObjectShortName">last_mem_addr[31:0]</obj_property>
-   </wvobject>
    <wvobject fp_name="/zybo_z7_tb/dut/mem_write_sel" type="logic">
       <obj_property name="ElementShortName">mem_write_sel</obj_property>
       <obj_property name="ObjectShortName">mem_write_sel</obj_property>
@@ -64,6 +60,10 @@
    <wvobject fp_name="/zybo_z7_tb/dut/led_reg" type="array">
       <obj_property name="ElementShortName">led_reg[3:0]</obj_property>
       <obj_property name="ObjectShortName">led_reg[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/zybo_z7_tb/dut/led_write" type="logic">
+      <obj_property name="ElementShortName">led_write</obj_property>
+      <obj_property name="ObjectShortName">led_write</obj_property>
    </wvobject>
    <wvobject fp_name="/zybo_z7_tb/dut/mem_read_data" type="array">
       <obj_property name="ElementShortName">mem_read_data[31:0]</obj_property>
@@ -128,5 +128,9 @@
    <wvobject fp_name="/zybo_z7_tb/dut/inst_mem/HADDR" type="array">
       <obj_property name="ElementShortName">HADDR[31:0]</obj_property>
       <obj_property name="ObjectShortName">HADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/zybo_z7_tb/dut/cpu/ldst_HWDATA" type="array">
+      <obj_property name="ElementShortName">ldst_HWDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ldst_HWDATA[31:0]</obj_property>
    </wvobject>
 </wave_config>

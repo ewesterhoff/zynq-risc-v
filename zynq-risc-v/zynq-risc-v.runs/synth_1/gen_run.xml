@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1713208310" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ecen5593_startercode_ca_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1713811827" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ecen5593_startercode_ca_top.dcp">
   <File Type="PA-TCL" Name="Zybo_Z7_top.tcl"/>
   <File Type="REPORTS-TCL" Name="Zybo_Z7_top_reports.tcl"/>
   <File Type="RDS-RDS" Name="Zybo_Z7_top.vds"/>
@@ -324,6 +324,33 @@
     <File Path="$PSRCDIR/sources_1/new/mem/my_program.mem">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/sd_reader.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/FPGA-SDcard-Reader/RTL/sd_reader.v"/>
+        <Attr Name="ImportTime" Val="1713296889"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/sdcmd_ctrl.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/FPGA-SDcard-Reader/RTL/sdcmd_ctrl.v"/>
+        <Attr Name="ImportTime" Val="1713296889"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/RTL/sd_file_reader.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../third-party/FPGA-SDcard-Reader/RTL/sd_file_reader.v"/>
+        <Attr Name="ImportTime" Val="1713296889"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>

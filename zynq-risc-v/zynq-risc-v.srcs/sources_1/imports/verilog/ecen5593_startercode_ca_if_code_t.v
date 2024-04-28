@@ -11,7 +11,7 @@
  *  in Codasip license agreement under which you obtained this file.
  * 
  *  \file
- *  \date    2024-02-27
+ *  \date    2024-04-28
  *  \author  Codasip (c) HW generator
  *  \version 9.4.2
  *  \brief   Contains module definition of the 'ecen5593_startercode_ca_if_code_t' CodAL interface.

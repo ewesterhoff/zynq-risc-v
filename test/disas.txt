@@ -6,57 +6,92 @@ Disassembly of section .text:
 00001000 delay:
 ; {
     1000: 13 01 81 ff                  	addi x2, x2, 0xff8
-;     for (unsigned int i = 0; i < 20000; ++i) {
+;     for (unsigned int i = 0; i < 5; ++i) {
     1004: 23 22 01 00                  	sw x0, 0x4 ( x2 )
     1008: 6f 00 40 00                  	jal x0, 0x100c <.LBB0_1>
 
 0000100c .LBB0_1:
     100c: 83 27 41 00                  	lw x15, 0x4 ( x2 )
-    1010: 93 d7 57 00                  	srli x15, x15, 0x5
-    1014: 13 07 00 27                  	addi x14, x0, 0x270
-    1018: 63 60 f7 02                  	bltu x14, x15, 0x1038 <.LBB0_4>
-    101c: 6f 00 40 00                  	jal x0, 0x1020 <.LBB0_2>
+    1010: 13 07 40 00                  	addi x14, x0, 0x4
+    1014: 63 60 f7 02                  	bltu x14, x15, 0x1034 <.LBB0_4>
+    1018: 6f 00 40 00                  	jal x0, 0x101c <.LBB0_2>
 
-00001020 .LBB0_2:
+0000101c .LBB0_2:
 ;         asm("nop");
-    1020: 13 00 00 00                  	addi x0, x0, 0x0
+    101c: 13 00 00 00                  	addi x0, x0, 0x0
 ;     }
-    1024: 6f 00 40 00                  	jal x0, 0x1028 <.LBB0_3>
+    1020: 6f 00 40 00                  	jal x0, 0x1024 <.LBB0_3>
 
-00001028 .LBB0_3:
-;     for (unsigned int i = 0; i < 20000; ++i) {
-    1028: 83 27 41 00                  	lw x15, 0x4 ( x2 )
-    102c: 93 87 17 00                  	addi x15, x15, 0x1
-    1030: 23 22 f1 00                  	sw x15, 0x4 ( x2 )
-    1034: 6f f0 9f fd                  	jal x0, 0x100c <.LBB0_1>
+00001024 .LBB0_3:
+;     for (unsigned int i = 0; i < 5; ++i) {
+    1024: 83 27 41 00                  	lw x15, 0x4 ( x2 )
+    1028: 93 87 17 00                  	addi x15, x15, 0x1
+    102c: 23 22 f1 00                  	sw x15, 0x4 ( x2 )
+    1030: 6f f0 df fd                  	jal x0, 0x100c <.LBB0_1>
 
-00001038 .LBB0_4:
+00001034 .LBB0_4:
 ; }
-    1038: 13 01 81 00                  	addi x2, x2, 0x8
-    103c: 67 80 00 00                  	jalr x0, 0x0 ( x1 )
+    1034: 13 01 81 00                  	addi x2, x2, 0x8
+    1038: 67 80 00 00                  	jalr x0, 0x0 ( x1 )
 
-00001040 main:
+0000103c main:
 ; int main() {
-    1040: 13 01 01 ff                  	addi x2, x2, 0xff0
-    1044: 23 26 11 00                  	sw x1, 0xc ( x2 )
-    1048: 23 24 01 00                  	sw x0, 0x8 ( x2 )
-    104c: b7 17 00 00                  	lui x15, 0x1
+    103c: 13 01 01 ff                  	addi x2, x2, 0xff0
+    1040: 23 26 11 00                  	sw x1, 0xc ( x2 )
+    1044: 23 24 01 00                  	sw x0, 0x8 ( x2 )
+    1048: b7 17 00 00                  	lui x15, 0x1
 ;     volatile unsigned int *led = (unsigned int *)0x00001000;
-    1050: 23 22 f1 00                  	sw x15, 0x4 ( x2 )
+    104c: 23 22 f1 00                  	sw x15, 0x4 ( x2 )
 ;     while (1) {
-    1054: 6f 00 40 00                  	jal x0, 0x1058 <.LBB1_1>
+    1050: 6f 00 40 00                  	jal x0, 0x1054 <.LBB1_1>
 
-00001058 .LBB1_1:
-;         *led = 1;  // Turn on LED
-    1058: 83 27 41 00                  	lw x15, 0x4 ( x2 )
-    105c: 13 27 10 00                  	slti x14, x0, 0x1
-    1060: 23 a0 e7 00                  	sw x14, 0x0 ( x15 )
+00001054 .LBB1_1:
+;         *led = 0;
+    1054: 83 27 41 00                  	lw x15, 0x4 ( x2 )
+    1058: 23 a0 07 00                  	sw x0, 0x0 ( x15 )
 ;         delay();
-    1064: ef f0 df f9                  	jal x1, 0x1000 <delay>
-;         *led = 0;  // Turn off LED
-    1068: 83 27 41 00                  	lw x15, 0x4 ( x2 )
-    106c: 23 a0 07 00                  	sw x0, 0x0 ( x15 )
+    105c: ef f0 5f fa                  	jal x1, 0x1000 <delay>
+;         *led = 1;
+    1060: 83 27 41 00                  	lw x15, 0x4 ( x2 )
+    1064: 13 27 10 00                  	slti x14, x0, 0x1
+    1068: 23 a0 e7 00                  	sw x14, 0x0 ( x15 )
 ;         delay();
-    1070: ef f0 1f f9                  	jal x1, 0x1000 <delay>
+    106c: ef f0 5f f9                  	jal x1, 0x1000 <delay>
+;         *led = 2;
+    1070: 83 27 41 00                  	lw x15, 0x4 ( x2 )
+    1074: 13 07 20 00                  	addi x14, x0, 0x2
+    1078: 23 a0 e7 00                  	sw x14, 0x0 ( x15 )
+;         delay();
+    107c: ef f0 5f f8                  	jal x1, 0x1000 <delay>
+;         *led = 3;
+    1080: 83 27 41 00                  	lw x15, 0x4 ( x2 )
+    1084: 13 07 30 00                  	addi x14, x0, 0x3
+    1088: 23 a0 e7 00                  	sw x14, 0x0 ( x15 )
+;         delay();
+    108c: ef f0 5f f7                  	jal x1, 0x1000 <delay>
+;         *led = 4;
+    1090: 83 27 41 00                  	lw x15, 0x4 ( x2 )
+    1094: 13 07 40 00                  	addi x14, x0, 0x4
+    1098: 23 a0 e7 00                  	sw x14, 0x0 ( x15 )
+;         delay();
+    109c: ef f0 5f f6                  	jal x1, 0x1000 <delay>
+;         *led = 5;
+    10a0: 83 27 41 00                  	lw x15, 0x4 ( x2 )
+    10a4: 13 07 50 00                  	addi x14, x0, 0x5
+    10a8: 23 a0 e7 00                  	sw x14, 0x0 ( x15 )
+;         delay();
+    10ac: ef f0 5f f5                  	jal x1, 0x1000 <delay>
+;         *led = 6;
+    10b0: 83 27 41 00                  	lw x15, 0x4 ( x2 )
+    10b4: 13 07 60 00                  	addi x14, x0, 0x6
+    10b8: 23 a0 e7 00                  	sw x14, 0x0 ( x15 )
+;         delay();
+    10bc: ef f0 5f f4                  	jal x1, 0x1000 <delay>
+;         *led = 7;
+    10c0: 83 27 41 00                  	lw x15, 0x4 ( x2 )
+    10c4: 13 07 70 00                  	addi x14, x0, 0x7
+    10c8: 23 a0 e7 00                  	sw x14, 0x0 ( x15 )
+;         delay();
+    10cc: ef f0 5f f3                  	jal x1, 0x1000 <delay>
 ;     while (1) {
-    1074: 6f f0 5f fe                  	jal x0, 0x1058 <.LBB1_1>
+    10d0: 6f f0 5f f8                  	jal x0, 0x1054 <.LBB1_1>
