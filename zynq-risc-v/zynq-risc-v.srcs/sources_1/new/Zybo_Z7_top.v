@@ -85,6 +85,9 @@ module Zybo_Z7_top
     wire mem_write_sel;    
     wire [1:0] mem_trans;
     
+    wire s_interrupt;
+    reg interrupt_reg;
+    
     // Memory-Mapped IO registers
     reg [3:0] led_reg;
     //reg [3:0] swc_reg;
@@ -94,6 +97,7 @@ module Zybo_Z7_top
     assign inst_write = current_instr;
     assign inst_write_sel_in = reg_inst_write_sel;
     assign inst_trans_in = inst_trans;
+    assign s_interrupt = interrupt_reg;
     
     // IO assignments
     assign led = led_reg;
@@ -109,6 +113,7 @@ module Zybo_Z7_top
     .ldst_HRDATA(mem_read_data),
     .ldst_HREADY(mem_ready),
     .ldst_HRESP(mem_resp),
+    .s_interrupt(s_interrupt),
     .if_code_HADDR(inst_addr_out),
     .if_code_HBURST(inst_burst),
     .if_code_HMASTLOCK(inst_mast_lock),
@@ -172,6 +177,7 @@ module Zybo_Z7_top
         rst = 1;
         rst_counter = 0;
         led_write = 0;
+        interrupt_reg = 0;
     end
     
     assign inst_addr_in = (state == 2) ? inst_addr_out : pc;
@@ -237,15 +243,15 @@ module Zybo_Z7_top
                         if (led_write == 1) begin
                             led_reg <= mem_write_data[3:0];
                         end
-                        /*
-                        if (mem_addr == BTN_ADDR && mem_write_sel == 1) begin
-                            btn_reg <= mem_write_data[3:0];
+                        
+                        if (mem_addr == BTN_ADDR && mem_write_sel == 0) begin
+                            interrupt_reg = 1;
+                        end else if (mem_addr == SWC_ADDR && mem_write_sel == 0) begin
+                            interrupt_reg = 1;
+                        end else begin
+                            interrupt_reg = 0;
                         end
                         
-                         if (mem_addr == SWC_ADDR && mem_write_sel == 1) begin
-                            swc_reg <= mem_write_data[3:0];
-                        end
-                        */
                     end
                 default: state <= 2'b0;
             endcase

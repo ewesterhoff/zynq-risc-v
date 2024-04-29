@@ -32,28 +32,28 @@ module ecen5593_startercode_ca_core_if_output_t(
     output wire r_pc_WE
 );
     // data-path code:
-    // /home/project/ecen5593-startercode/model/ca/pipelines/ca_pipe1_if.codal:91:9
+    // /home/project/ecen5593-startercode/model/ca/pipelines/ca_pipe1_if.codal:94:9
     // r_id_clear.write((int32)(0x0));
     assign r_id_clear_D = 1'b0;
-    // /home/project/ecen5593-startercode/model/ca/pipelines/ca_pipe1_if.codal:91:9
+    // /home/project/ecen5593-startercode/model/ca/pipelines/ca_pipe1_if.codal:94:9
     // r_id_clear.write((int32)(0x0));
     assign r_id_clear_WE = (ACT == 1'b1) ? 1'b1 : 1'b0;
-    // /home/project/ecen5593-startercode/model/ca/pipelines/ca_pipe1_if.codal:90:9
+    // /home/project/ecen5593-startercode/model/ca/pipelines/ca_pipe1_if.codal:93:9
     // r_id_pc.write(s_if_pcin.read());
     assign r_id_pc_D = (ACT == 1'b1) ? s_if_pcin_Q : 32'h00000000;
-    // /home/project/ecen5593-startercode/model/ca/pipelines/ca_pipe1_if.codal:90:9
+    // /home/project/ecen5593-startercode/model/ca/pipelines/ca_pipe1_if.codal:93:9
     // r_id_pc.write(s_if_pcin.read());
     assign r_id_pc_WE = (ACT == 1'b1) ? 1'b1 : 1'b0;
-    // /home/project/ecen5593-startercode/model/ca/pipelines/ca_pipe1_if.codal:92:9
+    // /home/project/ecen5593-startercode/model/ca/pipelines/ca_pipe1_if.codal:95:9
     // r_id_stall.write(s_id_stall.read());
     assign r_id_stall_D = s_id_stall_Q;
-    // /home/project/ecen5593-startercode/model/ca/pipelines/ca_pipe1_if.codal:92:9
+    // /home/project/ecen5593-startercode/model/ca/pipelines/ca_pipe1_if.codal:95:9
     // r_id_stall.write(s_id_stall.read());
     assign r_id_stall_WE = (ACT == 1'b1) ? 1'b1 : 1'b0;
-    // /home/project/ecen5593-startercode/model/ca/pipelines/ca_pipe1_if.codal:89:9
+    // /home/project/ecen5593-startercode/model/ca/pipelines/ca_pipe1_if.codal:92:9
     // r_pc.write(((s_id_stall.read()) ? (s_if_pcin.read()) : (s_if_nextpc.read())));
     assign r_pc_D = (ACT == 1'b1) ? ((s_id_stall_Q) ? s_if_pcin_Q : s_if_nextpc_Q) : 32'h00000000;
-    // /home/project/ecen5593-startercode/model/ca/pipelines/ca_pipe1_if.codal:89:9
+    // /home/project/ecen5593-startercode/model/ca/pipelines/ca_pipe1_if.codal:92:9
     // r_pc.write(((s_id_stall.read()) ? (s_if_pcin.read()) : (s_if_nextpc.read())));
     assign r_pc_WE = (ACT == 1'b1) ? 1'b1 : 1'b0;
 endmodule // ecen5593_startercode_ca_core_if_output_t

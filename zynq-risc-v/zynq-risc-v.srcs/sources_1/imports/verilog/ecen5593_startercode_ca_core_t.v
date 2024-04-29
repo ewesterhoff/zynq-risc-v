@@ -26,6 +26,7 @@ module ecen5593_startercode_ca_core_t(
     input  wire [31:0] ldst_HRDATA,
     input  wire ldst_HREADY,
     input  wire ldst_HRESP,
+    input wire s_interrupt,
     output wire [31:0] if_code_HADDR,
     output wire [2:0] if_code_HBURST,
     output wire if_code_HMASTLOCK,
@@ -129,6 +130,8 @@ module ecen5593_startercode_ca_core_t(
     wire s_ex_fast_zero;
     // CodAL signal/wire
     wire s_ex_take_branch;
+    // CodAL signal/wire
+    //wire s_interrupt;
     // CodAL signal/wire
     wire [31:0] s_me_decoded_data;
     // CodAL signal/wire
@@ -1191,6 +1194,7 @@ module ecen5593_startercode_ca_core_t(
         .s_ex_take_branch_Q(s_ex_take_branch),
         .s_id_stall_Q(s_id_stall),
         .s_if_pcin_Q(s_if_pcin),
+        .s_interrupt_Q(s_interrupt),
         .s_me_pcsrc_Q(s_me_pcsrc),
         .if_code_HADDR(if_code_HADDR),
         .if_code_HBURST(if_code_HBURST),
